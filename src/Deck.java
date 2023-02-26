@@ -18,7 +18,7 @@ public class Deck {
 
     public static void shuffleDeck(String[] deck, int numberOfCards, Random random) {
         for (int i = 0; i < numberOfCards; i++) {
-            int card = i + (random.nextInt(numberOfCards - i)); // random card in the deck
+            int card = i + (random.nextInt(numberOfCards - i));
             String temp = deck[card];
             deck[card] = deck[i];
             deck[i] = temp;
