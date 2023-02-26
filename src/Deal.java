@@ -10,10 +10,7 @@ public class Deal {
         final Scanner sc = new Scanner(System.in);
         final Random random = new Random();
 
-        final String[] suits = {"clubs", "diamonds", "hearts", "spades"};
-        final String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
-        final int numberOfCards = suits.length * rank.length;
+        final int numberOfCards = Suits.values().length * Rank.values().length;
         String[] deck = new String[numberOfCards];
 
         while (true) {
@@ -37,8 +34,8 @@ public class Deal {
                 break;
             }
         }
-        
-        Deck.initializeDeck(deck, suits, rank);
+
+        Deck.initializeDeck(deck);
         Deck.shuffleDeck(deck, numberOfCards, random);
         Deck.dealCards(deck, cardsForPlayer, players);
     }

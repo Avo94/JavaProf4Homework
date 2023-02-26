@@ -2,13 +2,18 @@ import java.util.Random;
 
 public class Deck {
 
-    public static void initializeDeck(String[] deck, String[] suits, String[] rank) {
+    public static void initializeDeck(String[] deck) {
 
-        for (int i = 0; i < rank.length; i++) {
-            for (int j = 0; j < suits.length; j++) {
-                deck[suits.length * i + j] = rank[i] + " " + suits[j];
+        int i = 0;
+        for (Rank rank : Rank.values()) {
+            int j = 0;
+            for (Suits suit : Suits.values()) {
+                deck[Suits.values().length * i + j] = rank + " " + suit;
+                j++;
             }
+            i++;
         }
+
     }
 
     public static void shuffleDeck(String[] deck, int numberOfCards, Random random) {
